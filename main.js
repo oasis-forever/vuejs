@@ -8,7 +8,9 @@ const app = Vue.createApp({
         name: 'Great Socks',
         description: 'Smell-proof socks',
         price: '980 JPY for 3 pairs',
-        image: './assets/images/socks_blue.jpg'
+        image: './assets/images/socks_blue.jpg',
+        inventory: 0,
+        onSale: true
       }
     }
   }

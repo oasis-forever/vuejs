@@ -19,9 +19,13 @@
             <img :src="product.image" :alt="product.description">
           </div>
           <div class="product-info">
+            <p v-show="product.onSale" class="on-sale on-sale-labal">On Sale Now!</p>
             <h1>{{ product.name }}</h1>
             <p>Description: {{ product.description }}</p>
             <p>Price: {{ product.price }}</p>
+            <p v-if="product.inventory > 10">In Stock</p>
+            <p v-else-if="product.inventory <= 10 && product.inventory > 0 ">Almost Sold Out</p>
+            <p v-else>Out of Stock</p>
           </div>
         </div>
       </div>

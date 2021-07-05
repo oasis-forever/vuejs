@@ -124,6 +124,18 @@ p {
   width: 42%;
 }
 
+.on-sale {
+  display: inline;
+  padding: 3px;
+}
+
+.on-sale-labal {
+  color: #000;
+  font-weight: bold;
+  background-color: yellow;
+}
+
+
 .review-form {
   display: flex;
   flex-direction: column;
