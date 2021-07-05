@@ -87,6 +87,18 @@ li {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.57);
 }
 
+.source-code {
+  display: block;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.source-code-text {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
 .out-of-stock-img {
   opacity:0.5
 }
@@ -109,7 +121,7 @@ p {
 
 .product-image,
 .product-info {
-  width: 50%;
+  width: 42%;
 }
 
 .review-form {
@@ -178,10 +190,4 @@ ul {
   .review-form {
     width: 90%;
   }
-}
-
-.product {
-  width: 30%;
-  margin-left: auto;
-  margin-right: auto;
 }

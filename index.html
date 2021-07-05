@@ -10,10 +10,20 @@
   </head>
   <body>
     <div id="app">
-      <div class="product">
-        <h1>{{ product.name }}</h1>
-        <p>Description: {{ product.description }}</p>
-        <p>Price: {{ product.price }}</p>
+      <div class="nav-bar">
+        <a :href="github.url" target="_blank" class="source-code source-code-text">Source Code</a>
+      </div>
+      <div class="product-display">
+        <div class="product-container">
+          <div class="product-image">
+            <img :src="product.image" :alt="product.description">
+          </div>
+          <div class="product-info">
+            <h1>{{ product.name }}</h1>
+            <p>Description: {{ product.description }}</p>
+            <p>Price: {{ product.price }}</p>
+          </div>
+        </div>
       </div>
     </div>
 
