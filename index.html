@@ -10,10 +10,17 @@
   </head>
   <body>
     <div id="app">
-      <h1>Product goes here</h1>
+      <div class="product">
+        <h1>{{ product.name }}</h1>
+        <p>Description: {{ product.description }}</p>
+        <p>Price: {{ product.price }}</p>
+      </div>
     </div>
 
     <!-- Import Js -->
     <script src="./main.js"></script>
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
   </body>
 </html>
