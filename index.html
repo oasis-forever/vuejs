@@ -22,10 +22,25 @@
             <p v-show="product.onSale" class="on-sale on-sale-labal">On Sale Now!</p>
             <h1>{{ product.name }}</h1>
             <p>Description: {{ product.description }}</p>
+            <ul>
+              <li>Ingredients:</li>
+              <li v-for="ingredient in product.ingredients">{{ ingredient }}</li>
+            </ul>
+            <ul>
+              <li>Sizes:</li>
+              <li v-for="size in product.sizes">{{ size }}</li>
+            </ul>
             <p>Price: {{ product.price }}</p>
             <p v-if="product.inventory > 10">In Stock</p>
             <p v-else-if="product.inventory <= 10 && product.inventory > 0 ">Almost Sold Out</p>
             <p v-else>Out of Stock</p>
+            <ul>
+              <li>Ingredients:</li>
+              <li v-for="ingredient in product.ingredients">{{ ingredient }}</li>
+            </ul>
+            <div v-for="variant in product.variants" :key="variant.id">
+              {{ variant.color }}
+            </div>
           </div>
         </div>
       </div>

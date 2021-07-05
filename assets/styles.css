@@ -75,7 +75,11 @@ label {
 }
 
 li {
-  font-size: 18px;
+  font-size: 22px;
+}
+
+li:first-child {
+  margin-left: -40px;
 }
 
 .nav-bar {
