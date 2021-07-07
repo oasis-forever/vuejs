@@ -13,34 +13,17 @@
       <div class="nav-bar">
         <a :href="github.url" target="_blank" class="source-code source-code-text">Source Code</a>
       </div>
-      <div class="cart">
-        <p>Cart: {{ product.cart }}</p>
-        <button
-          class="button"
-          :class="{ disabledButton: !product.inStock }"
-          @click="addToCart"
-          :disabled="!product.inStock">
-          Add to cart
-        </button>
-        <button
-          class="button"
-          :class="{ disabledButton: !product.inStock }"
-          @click="removeFromCart"
-          :disabled="!product.inStock">
-          Remove from cart
-        </button>
-      </div>
       <div class="product-display">
         <div class="product-container">
           <div class="product-image">
             <img
-              :class="{ outOfStockImg: !product.inStock }"
-              :src="product.image"
+              :class="{ outOfStockImg: !inStock }"
+              :src="image"
               :alt="product.description">
           </div>
           <div class="product-info">
             <p v-show="product.onSale" class="on-sale on-sale-labal">On Sale Now!</p>
-            <h1>{{ product.name }}</h1>
+            <h1>{{ title }}</h1>
             <p class="item">Description: {{ product.description }}</p>
             <ul class="item">
               <li>Ingredients:</li>
@@ -58,13 +41,31 @@
             <ul class="item">
               <li>Colour:</li>
               <li
-                v-for="variant in product.variants"
+                v-for="(variant, index) in product.variants"
                 :key="variant.id"
-                @mouseover="updateImage(variant.image)"
+                @mouseover="updateVariant(index)"
                 class="color-circle"
                 :style="{ backgroundColor: variant.color }">
               </li>
             </ul>
+          </div>
+          <div class="cart">
+            <p>{{ stockStatus }}</p>
+            <p>Cart: {{ product.cart }}</p>
+            <button
+              class="button"
+              :class="{ disabledButton: !inStock }"
+              @click="addToCart"
+              :disabled="!inStock">
+              Add to cart
+            </button>
+            <button
+              class="button"
+              :class="{ disabledButton: !inStock }"
+              @click="removeFromCart"
+              :disabled="!inStock">
+              Remove from cart
+            </button>
           </div>
         </div>
       </div>
