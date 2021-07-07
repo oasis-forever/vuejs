@@ -1,4 +1,4 @@
-body {
+outOfStockImgbody {
   background-color: #f2f2f2;
   font-family: tahoma;
   color: #282828;
@@ -41,6 +41,7 @@ body {
   margin-top: 8px;
   border: 2px solid #d8d8d8;
   border-radius: 50%;
+  list-style: none;
 }
 
 
@@ -113,7 +114,7 @@ li:first-child {
   text-decoration: underline;
 }
 
-.out-of-stock-img {
+.outOfStockImg {
   opacity:0.5
 }
 

@@ -12,7 +12,7 @@ const app = Vue.createApp({
         sizes: ['S', 'M', 'L', 'XL'],
         price: '980 JPY for 3 pairs',
         image: './assets/images/socks_green.jpg',
-        inventory: 100,
+        inStock: false,
         variants: [
           { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
           { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' }

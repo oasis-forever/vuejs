@@ -15,13 +15,28 @@
       </div>
       <div class="cart">
         <p>Cart: {{ product.cart }}</p>
-        <button class="button" @click="addToCart">Add to cart</button>
-        <button class="button" @click="removeFromCart">Remove from cart</button>
+        <button
+          class="button"
+          :class="{ disabledButton: !product.inStock }"
+          @click="addToCart"
+          :disabled="!product.inStock">
+          Add to cart
+        </button>
+        <button
+          class="button"
+          :class="{ disabledButton: !product.inStock }"
+          @click="removeFromCart"
+          :disabled="!product.inStock">
+          Remove from cart
+        </button>
       </div>
       <div class="product-display">
         <div class="product-container">
           <div class="product-image">
-            <img :src="product.image" :alt="product.description">
+            <img
+              :class="{ outOfStockImg: !product.inStock }"
+              :src="product.image"
+              :alt="product.description">
           </div>
           <div class="product-info">
             <p v-show="product.onSale" class="on-sale on-sale-labal">On Sale Now!</p>
@@ -36,16 +51,19 @@
               <li v-for="size in product.sizes">{{ size }}</li>
             </ul>
             <p class="item">Price: {{ product.price }}</p>
-            <p v-if="product.inventory > 10" class="item">In Stock</p>
-            <p v-else-if="product.inventory <= 10 && product.inventory > 0 " class="item">Almost Sold Out</p>
-            <p v-else class="item">Out of Stock</p>
             <ul class="item">
               <li>Ingredients:</li>
               <li v-for="ingredient in product.ingredients">{{ ingredient }}</li>
             </ul>
             <ul class="item">
               <li>Colour:</li>
-              <li v-for="variant in product.variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{ variant.color }}</li>
+              <li
+                v-for="variant in product.variants"
+                :key="variant.id"
+                @mouseover="updateImage(variant.image)"
+                class="color-circle"
+                :style="{ backgroundColor: variant.color }">
+              </li>
             </ul>
           </div>
         </div>
