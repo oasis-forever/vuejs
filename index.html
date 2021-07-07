@@ -13,68 +13,13 @@
       <div class="nav-bar">
         <a :href="github.url" target="_blank" class="source-code source-code-text">Source Code</a>
       </div>
-      <div class="product-display">
-        <div class="product-container">
-          <div class="product-image">
-            <img
-              :class="{ outOfStockImg: !inStock }"
-              :src="image"
-              :alt="product.description">
-          </div>
-          <div class="product-info">
-            <p v-show="product.onSale" class="on-sale on-sale-labal">On Sale Now!</p>
-            <h1>{{ title }}</h1>
-            <p class="item">Description: {{ product.description }}</p>
-            <ul class="item">
-              <li>Ingredients:</li>
-              <li v-for="ingredient in product.ingredients">{{ ingredient }}</li>
-            </ul>
-            <ul class="item">
-              <li>Sizes:</li>
-              <li v-for="size in product.sizes">{{ size }}</li>
-            </ul>
-            <p class="item">Price: {{ product.price }}</p>
-            <ul class="item">
-              <li>Ingredients:</li>
-              <li v-for="ingredient in product.ingredients">{{ ingredient }}</li>
-            </ul>
-            <ul class="item">
-              <li>Colour:</li>
-              <li
-                v-for="(variant, index) in product.variants"
-                :key="variant.id"
-                @mouseover="updateVariant(index)"
-                class="color-circle"
-                :style="{ backgroundColor: variant.color }">
-              </li>
-            </ul>
-          </div>
-          <div class="cart">
-            <p>{{ stockStatus }}</p>
-            <p>Cart: {{ product.cart }}</p>
-            <button
-              class="button"
-              :class="{ disabledButton: !inStock }"
-              @click="addToCart"
-              :disabled="!inStock">
-              Add to cart
-            </button>
-            <button
-              class="button"
-              :class="{ disabledButton: !inStock }"
-              @click="removeFromCart"
-              :disabled="!inStock">
-              Remove from cart
-            </button>
-          </div>
-        </div>
-      </div>
+      <product-display :premium="premium"></product-display>
     </div>
 
     <!-- Import Js -->
     <script src="./main.js"></script>
-    <script>
-      const mountedApp = app.mount('#app')
-    </script>
+    <!-- Import Compoents -->
+    <script src="./components/ProductDisplay.js"></script>
+    <script>const mountedApp = app.mount('#app')</script>
   </body>
 </html>
