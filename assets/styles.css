@@ -5,11 +5,11 @@ body {
 }
 
 .button {
-  margin: 30px;
+  margin: 10px;
   background-color: #39495c;
   border-radius: 5px;
   font-size: 18px;
-  width: 160px;
+  width: 188px;
   height: 60px;
   color: white;
   padding: 20px;
@@ -29,6 +29,10 @@ body {
   -webkit-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
   box-shadow: 2px 15px -12px rgba(0, 0, 0, 0.57);
+}
+
+.add-to-cart {
+  float: right;
 }
 
 .color-circle {
@@ -76,10 +80,12 @@ label {
 
 li {
   font-size: 22px;
+  margin-left: 40px;
 }
 
 li:first-child {
-  margin-left: -40px;
+  margin-left: 0px;
+  list-style-type: none;
 }
 
 .nav-bar {
@@ -101,6 +107,10 @@ li:first-child {
   text-decoration: none;
   color: #000;
   font-weight: bold;
+}
+
+.source-code-text:hover {
+  text-decoration: underline;
 }
 
 .out-of-stock-img {
@@ -138,7 +148,6 @@ p {
   font-weight: bold;
   background-color: yellow;
 }
-
 
 .review-form {
   display: flex;
@@ -188,8 +197,9 @@ textarea {
   margin-bottom: 20px;
 }
 
-ul {
-  list-style-type: none;
+.item {
+  background-color: #f0fff0;
+  padding: 10px;
 }
 
 @media only screen and (max-width: 600px) {
