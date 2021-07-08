@@ -6,7 +6,7 @@
 
 * [Vue Mastery](https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3/)
 
-### 3. Clone this repogitory
+## 3. Clone this repository
 
 ```bash
 git clone git@github.com:oasis-forever/javascript_primer.git
