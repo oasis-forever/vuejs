@@ -3,6 +3,10 @@ app.component('product-display', {
     premium: {
       type: Boolean,
       required: true
+    },
+    cart: {
+      type: Array,
+      required: true
     }
   },
   template:
@@ -45,7 +49,7 @@ app.component('product-display', {
       </div>
       <div class="cart">
         <p>{{ stockStatus }}</p>
-        <p>Cart: {{ this.cart }}</p>
+        <p>Cart: {{ itemsInCart }}</p>
         <button
           class="button"
           :class="{ disabledButton: !inStock }"
@@ -92,11 +96,11 @@ app.component('product-display', {
   },
   methods: {
     addToCart() {
-      this.cart += 1;
+      this.$emit('add-to-cart');
     },
     removeFromCart() {
       if (this.cart !== 0) {
-        this.cart -= 1;
+        this.$emit('remove-from-cart');
       }
     },
     updateVariant(index) {
@@ -125,6 +129,9 @@ app.component('product-display', {
         return 'Free';
       }
       return '700 JPY';
+    },
+    itemsInCart() {
+      return this.cart.length;
     }
   }
 })

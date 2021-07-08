@@ -4,9 +4,16 @@ const app = Vue.createApp({
       github: {
         url: 'https://github.com/oasis-forever/vuejs_tutorial'
       },
-      cart: 0,
+      cart: [],
       premium: true
     }
   },
-  methods: {}
+  methods: {
+    pushItems(id) {
+      this.cart.push(id);
+    },
+    removeItems(id) {
+      this.cart.splice(this.cart.indexOf(id), 1);
+    }
+  }
 });
