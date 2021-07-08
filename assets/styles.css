@@ -211,6 +211,18 @@ textarea {
   padding: 10px;
 }
 
+.review-list {
+  list-style: none;
+  margin-left: 0;
+  display: block;
+}
+
+.review-list li {
+  margin-left: 0;
+  margin-bottom: 5px;
+}
+
+
 @media only screen and (max-width: 600px) {
   .container {
     flex-direction: column;

@@ -10,7 +10,8 @@ app.component('product-display', {
     }
   },
   template:
-  `<div class="product-display">
+  `
+  <div class="product-display">
     <div class="product-container">
       <div class="product-image">
         <img
@@ -66,7 +67,12 @@ app.component('product-display', {
         </button>
       </div>
     </div>
-  </div>`,
+  </div>
+  <div class="review">
+    <review-list v-if:"review.length" :reviews="reviews"></review-list>
+    <review-form @review-submitted="addReview"></review-form>
+  </div>
+  `,
   data() {
     return {
       onSale: true,
@@ -92,7 +98,8 @@ app.component('product-display', {
           quantity: 1
         }
       ],
-    }
+      reviews: []
+    };
   },
   methods: {
     addToCart() {
@@ -105,6 +112,9 @@ app.component('product-display', {
     },
     updateVariant(index) {
       this.selectedVariant = index;
+    },
+    addReview(review) {
+      this.reviews.push(review)
     }
   },
   computed: {
@@ -134,4 +144,4 @@ app.component('product-display', {
       return this.cart.length;
     }
   }
-})
+});
